@@ -1,4 +1,4 @@
-## Retrival
+## Retrieval
 
 ### Dense 𝕏  (Retrieval Granularity)
 Through our experiments on five open-domain QA datasets with six different dense retrievers, we discovered that retrieval by proposition outperforms passage or sentence in both passage retrieval accuracy and downstream QA performance with a fixed retrieved word budget.
@@ -56,4 +56,14 @@ decomposition can yield improved results.
 ## Embedding
 
 There is no one-size-fits-all answer to “which embedding model to use.” However, some specific models are better suited for particular use cases. (BM25, BERT, AngIE, Voyage, BGE, etc)
+
+### REPLUG read multiple documents in parallel()
+REPLUG utilizes a retriever and an LLM to calculate the probability distributions of the retrieved documents and then performs supervised training by computing the KL divergence. This straightforward and effective training method enhances the performance of the retrieval model by using an LM as the supervisory signal, eliminating the need for specific cross-attention mechanisms
+
+[repository](https://github.com/IntelLabs/fastRAG/blob/main/examples/replug_parallel_reader.ipynb)
+
+
+## Generation
+
+Like humans, LLM tends to only **focus on the beginning and end of long texts**, while forgetting the middle portion. Therefore, in the RAG system, we typically need to further process the retrieved content.
 
