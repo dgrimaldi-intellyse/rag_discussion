@@ -60,10 +60,21 @@ There is no one-size-fits-all answer to “which embedding model to use.” Howe
 ### REPLUG read multiple documents in parallel()
 REPLUG utilizes a retriever and an LLM to calculate the probability distributions of the retrieved documents and then performs supervised training by computing the KL divergence. This straightforward and effective training method enhances the performance of the retrieval model by using an LM as the supervisory signal, eliminating the need for specific cross-attention mechanisms
 
+![alt text](image-5.png)
+
 [repository](https://github.com/IntelLabs/fastRAG/blob/main/examples/replug_parallel_reader.ipynb)
 
 
 ## Generation
 
-Like humans, LLM tends to only **focus on the beginning and end of long texts**, while forgetting the middle portion. Therefore, in the RAG system, we typically need to further process the retrieved content.
+Like humans, LLM tends to only **focus on the beginning and end of long texts**, while forgetting the middle portion. Therefore, in the RAG system, we typically need to further process the retrieved content. Excessive context can introduce more noise, diminishing the LLM’s perception of key information.
+
+## Augmentation process in RAG
+
+![alt text](image-4.png)
+
+### Iterative Retrieval
+It may be affected by semantic discontinuity and the accumulation of irrelevant information
+### Recursive Retrieval
+
 
