@@ -76,5 +76,23 @@ Like humans, LLM tends to only **focus on the beginning and end of long texts**,
 ### Iterative Retrieval
 It may be affected by semantic discontinuity and the accumulation of irrelevant information
 ### Recursive Retrieval
+ToC creates a clarification tree that systematically optimizes the ambiguous parts in the Query. It can be particularly useful in complex search scenarios where the user’s needs are not entirely clear from the outset or where the information sought is highly specialized or nuanced
 
+problem:
 
+![alt text](image-6.png)
+
+answer:
+
+![alt text](image-7.png)
+
+### Adaptive Retrieval
+Introduce reflection token, they are categorized into retrieval and critique tokens to
+indicate the need for retrieval and its generation quality respectively. In particular,
+given an input prompt and preceding generations, SELF-RAG first determines if augmenting the
+continued generation with retrieved passages would be helpful.
+
+![alt text](image-8.png)
+
+[repository](https://github.com/AkariAsai/self-rag)
+[link](https://selfrag.github.io/)
